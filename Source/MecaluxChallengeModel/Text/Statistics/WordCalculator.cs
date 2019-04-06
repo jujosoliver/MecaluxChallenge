@@ -15,7 +15,16 @@ namespace MecaluxChallenge.Text.Statistics
 
         ITextCountingStatistic ICountingStatisticCalculator.GetStatistics(string queryText)
         {
-            int countResult = queryText.Split(TextConstants.SPLITTER).Length;
+            int countResult;
+            if (queryText == string.Empty)
+            {
+                countResult = 0;
+            }
+            else
+            {
+                countResult = queryText.Split(TextConstants.SPLITTER).Length;
+            }
+            
             ITextCountingStatistic result = DIService.ContainerService.Resolve<ITextCountingStatistic>();
             result.SetStatistic(eStatistics.WordCount, countResult);
             return result;

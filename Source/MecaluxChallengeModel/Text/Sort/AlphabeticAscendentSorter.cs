@@ -6,7 +6,7 @@ namespace MecaluxChallenge.Text.Sort
     /// <summary>
     /// Text Sorter based on Alphabetic Ascendent criteria
     /// </summary>
-    internal class AlphabeticAscendentSorter : TextSorter
+    public class AlphabeticAscendentSorter : TextSorter
     {
 
         #region ITextSorter
